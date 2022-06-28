@@ -145,7 +145,7 @@ export async function readFileFromPod(fileURL) {
 }
 
 // Upload File to the targetFileURL.
-export async function writeFileToPod(file, targetFileURL, fetch) {
+export async function writeFileToPod(file, targetFileURL) {
 
 	let filetype = getFileType(file);
 
@@ -166,7 +166,7 @@ export async function writeFileToPod(file, targetFileURL, fetch) {
 }
 
 // Upload Blob of text to the targetFileURL.
-export async function writeBlobToPod(blob, targetFileURL, fetch) {
+export async function writeBlobToPod(blob, targetFileURL) {
 
 	let filetype = blob.type;
 
