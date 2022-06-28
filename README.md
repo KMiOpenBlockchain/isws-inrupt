@@ -47,7 +47,7 @@ reader.onload = function() {
 
 ***
 ```
-writeFileToPod(file, targetFileURL, fetch)
+writeFileToPod(file, targetFileURL)
 ```
 Code snippet from ISWS 2022 Demonstrator:
 ```
@@ -67,11 +67,7 @@ try {
 
 ***
 ```
-Inrupt.writeBlobToPod(blob, pathToStore)
-```
-***
-```
-writeBlobToPod(blob, targetFileURL
+writeBlobToPod(blob, targetFileURL)
 ```
 Code snippet from ISWS 2022 Demonstrator:
 ```
