@@ -51,18 +51,18 @@ writeFileToPod(file, targetFileURL, fetch)
 ```
 Code snippet from ISWS 2022 Demonstrator:
 ```
-		try {
-			const podUrl = document.getElementById("PodURL").value;
-			const file = document.getElementById('fileoftriples').files[0];
-			if (file) {
-				const filePodURL = podUrl+file.name;
-				await Inrupt.writeFileToPod(file, `${filePodURL}`);
-				const solidFileURLField = document.getElementById("solidFileURL").value = filePodURL;
-			}
-		} catch (error) {
-			console.log(error);
-			alert(error.message);
-		}
+try {
+  const podUrl = document.getElementById("PodURL").value;
+  const file = document.getElementById('fileoftriples').files[0];
+  if (file) {
+    const filePodURL = podUrl+file.name;
+    await Inrupt.writeFileToPod(file, `${filePodURL}`);
+    const solidFileURLField = document.getElementById("solidFileURL").value = filePodURL;
+  }
+} catch (error) {
+  console.log(error);
+  alert(error.message);
+}
 ```
 
 ***
@@ -75,11 +75,11 @@ writeBlobToPod(blob, targetFileURL
 ```
 Code snippet from ISWS 2022 Demonstrator:
 ```
-		const filename = title.replace(/[^\-a-z0-9]/gi, '_').toLowerCase();
-		const pathToStore = document.getElementById("PodURL").value+filename+'.jsonld';
-		const filtype = 'application/ld+json';
-		const blob = new Blob([data], { type: filtype });
-		const fileurl = await Inrupt.writeBlobToPod(blob, pathToStore);
+const filename = title.replace(/[^\-a-z0-9]/gi, '_').toLowerCase();
+const pathToStore = document.getElementById("PodURL").value+filename+'.jsonld';
+const filtype = 'application/ld+json';
+const blob = new Blob([data], { type: filtype });
+const fileurl = await Inrupt.writeBlobToPod(blob, pathToStore);
 ```
 
 
@@ -89,20 +89,19 @@ loadFolderContentList(podFolderURL)
 ```
 Code snippet from ISWS 2022 Demonstrator:
 ```
-		try {
-			const podUrl = document.getElementById("PodURL").value;
-			const allFolderArray = await Inrupt.loadFolderContentList(podUrl);
+try {
+  const podUrl = document.getElementById("PodURL").value;
+  const allFolderArray = await Inrupt.loadFolderContentList(podUrl);
 
-			const filesArea = document.getElementById("filesArea");
-			let allFiles = ""
-			allFolderArray.forEach(function(filename) {
-				allFiles += filename+'\n';
-			});
+  const filesArea = document.getElementById("filesArea");
+  let allFiles = ""
+  allFolderArray.forEach(function(filename) {
+    allFiles += filename+'\n';
+  });
 
-			filesArea.value = allFiles;
-
-		} catch (error) {
-			console.log(error);
-			alert(error.message);
-		}
+  filesArea.value = allFiles;
+} catch (error) {
+  console.log(error);
+  alert(error.message);
+}
 ```
