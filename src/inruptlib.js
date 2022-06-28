@@ -72,7 +72,9 @@ const solidurl = "https://broker.pod.inrupt.com";
 
 let session = null;
 
-// 1a. Start Login Process. Call login() function.
+/**
+ * 1a. Start Login Process. Call login() function.
+ */
 export function startSolidLogin() {
 	return login({
 		oidcIssuer: solidurl,
@@ -81,9 +83,20 @@ export function startSolidLogin() {
 	});
 }
 
-// 1b. Login Redirect.
-// When redirected after login, call handleIncomingRedirect() function to
-// finish the login process by retrieving session information.
+/**
+ * logout of your pod session
+ */
+export function solidLogout() {
+	getDefaultSession().logout();
+	session = null;
+	disableSolidButtons();
+}
+
+/**
+ * 1b. Login Redirect.
+ * When redirected after login, call handleIncomingRedirect() function to
+ * finish the login process by retrieving session information.
+ */
 async function finishSolidLogin() {
 	await handleIncomingRedirect({ restorePreviousSession : true });
 	session = getDefaultSession();
@@ -99,7 +112,6 @@ async function finishSolidLogin() {
 		}
 	}
 }
-
 
 // The example has the login redirect back to the index.html.
 // finishLogin() calls the function to process login information.
@@ -126,7 +138,10 @@ export function getFileType(file) {
 	return filetype;
 }
 
-// Read a File from the fileURL.
+/**
+ * Read a File from the given fileURL.
+ */
+// https://docs.inrupt.com/developer-tools/api/javascript/solid-client/modules/resource_file.html
 export async function readFileFromPod(fileURL) {
 	//console.log("Reading file: "+fileURL);
 	try {
@@ -144,7 +159,12 @@ export async function readFileFromPod(fileURL) {
 	}
 }
 
-// Upload File to the targetFileURL.
+/**
+ * Upload File to the targetFileURL.
+ * If the targetFileURL exists, overwrite the file.
+ * If the targetFileURL does not exist, create the file at the location.
+ */
+ // https://docs.inrupt.com/developer-tools/api/javascript/solid-client/modules/resource_file.html
 export async function writeFileToPod(file, targetFileURL) {
 
 	let filetype = getFileType(file);
@@ -165,7 +185,11 @@ export async function writeFileToPod(file, targetFileURL) {
 	}
 }
 
-// Upload Blob of text to the targetFileURL.
+/**
+ * Upload Blob of text to the targetFileURL.
+ * If the targetFileURL exists, overwrite the file.
+ * If the targetFileURL does not exist, create the file at the location.
+ */
 export async function writeBlobToPod(blob, targetFileURL) {
 
 	let filetype = blob.type;
