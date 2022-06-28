@@ -18,7 +18,7 @@ npm install
 ```
 npm run build
 ```
-This will result in a new inruptlib.js file being created in the 'dsit' folder.
+This will result in a new inruptlib.js file being created in a 'dist' folder.
 
-* Copy the distribution libaray file (inruptlib.js) into your code base.
+* Copy the distribution libaray file (dist/inruptlib.js) into your web app code base.
 
