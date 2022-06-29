@@ -33,6 +33,7 @@ import {
 	isRawData,
 	getContentType,
 	overwriteFile,
+	saveFileInContainer,
 	getSourceUrl,
 	getSolidDataset,
 	getThingAll,
@@ -181,34 +182,6 @@ export async function writeFileToPod(file, targetFileURL) {
 
 	} catch (error) {
 		console.log(error);
-		throw error;
-	}
-}
-
-/**
- * Upload Blob of text to the targetFileURL.
- * If the targetFileURL exists, overwrite the file.
- * If the targetFileURL does not exist, create the file at the location.
- */
-export async function writeBlobToPod(blob, targetFileURL) {
-
-	let filetype = blob.type;
-
-	// defaults to n-quads, which is what lnkchain returns by default.
-	if (filetype == "") filetype = 'application/ld+json';
-
-	try {
-		const savedFile = await overwriteFile(
-			targetFileURL,  						// URL for the file.
-			blob,
-		  { contentType: filetype, fetch: fetch }   // fetch from the authenticated session
-		);
-
-    	//console.log(`File saved at ${getSourceUrl(savedFile)}`);
-    	return getSourceUrl(savedFile);
-
-	} catch (error) {
-		console.log(error.message);
 		throw error;
 	}
 }
