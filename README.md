@@ -50,6 +50,8 @@ reader.onload = function() {
 writeFileToPod(file, targetFileURL)
 ```
 Code snippet from ISWS 2022 Demonstrator:
+
+From File
 ```
 try {
   const podUrl = document.getElementById("PodURL").value;
@@ -65,19 +67,17 @@ try {
 }
 ```
 
-***
+OR from local input via Blob
 ```
-writeBlobToPod(blob, targetFileURL)
-```
-Code snippet from ISWS 2022 Demonstrator:
-```
-const filename = title.replace(/[^\-a-z0-9]/gi, '_').toLowerCase();
-const pathToStore = document.getElementById("PodURL").value+filename+'.jsonld';
-const filtype = 'application/ld+json';
-const blob = new Blob([data], { type: filtype });
-const fileurl = await Inrupt.writeBlobToPod(blob, pathToStore);
-```
+let filename = title.replace(/[^\-a-z0-9]/gi, '_').toLowerCase();
+filename = filename+'.jsonld';
+const pathToStore = document.getElementById("PodURL").value+filename;
+const filetype = 'text/plain'; // must be this or fails - no idea why
+const blob = new Blob([data], { type: filetype });
+const file = new File([blob], filename, { type: filetype });
 
+const fileurl = await Inrupt.writeFileToPod(file, pathToStore);
+```
 
 ***
 ```
