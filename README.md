@@ -27,9 +27,9 @@ This will result in a new inruptlib.js file being created in a 'dist' folder.
 
 Login to Solid
 ```
-Inrupt.startSolidLogin()
+Inrupt.startSolidLogin(oidcIssuerUrl, clientNameString)
 ```
-This function will call back to the page and be picked up by 'finishSolidLogin()'
+This function will call back to the page it is called from and be picked up by 'finishSolidLogin()'
 
 ***
 ```
