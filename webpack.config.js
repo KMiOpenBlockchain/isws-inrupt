@@ -17,6 +17,6 @@ module.exports = {
     ]
   },
   devServer: {
-    static: "./lib"
+    static: "./dist"
   }
 };

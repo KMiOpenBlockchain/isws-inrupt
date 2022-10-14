@@ -30,7 +30,6 @@ import {
   	createSolidDataset,
   	createThing,
 	getFile,
-	isRawData,
 	getContentType,
 	overwriteFile,
 	saveFileInContainer,
@@ -40,6 +39,7 @@ import {
 	getThing,
  	getStringNoLocale,
 	getUrlAll,
+    getPodUrlAll,
 	getContainedResourceUrlAll,
   	saveSolidDatasetAt,
 	setThing,
@@ -52,7 +52,6 @@ import {
 	getSolidDatasetWithAcl,
 	hasResourceAcl,
 	getResourceAcl,
-	getPublicAccess,
 	getFileWithAcl,
 	hasAcl
 } from "@inrupt/solid-client";
@@ -67,20 +66,16 @@ import {
 
 import { SCHEMA_INRUPT, RDF, AS } from "@inrupt/vocab-common-rdf";
 
-import { FOAF, VCARD } from "@inrupt/vocab-common-rdf";
-
-const solidurl = "https://broker.pod.inrupt.com";
-
 let session = null;
 
 /**
- * 1a. Start Login Process. Call login() function.
+ * Start Login Process. Call login() function.
  */
-export function startSolidLogin() {
+export function startSolidLogin(oidcIssuerUrl, clientNameString) {
 	return login({
-		oidcIssuer: solidurl,
+		oidcIssuer: oidcIssuerUrl,
 		redirectUrl: window.location.href,
-		clientName: "RDF Anchoring Demo"
+		clientName: clientNameString
 	});
 }
 
@@ -103,7 +98,7 @@ async function finishSolidLogin() {
 	session = getDefaultSession();
 
 	if (session.info.isLoggedIn) {
-
+		//console.log(session);
 		try {
 			document.getElementById("solidpod").textContent = session.info.webId;
 			enableSolidButtons();

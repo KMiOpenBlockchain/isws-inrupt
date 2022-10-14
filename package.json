@@ -1,6 +1,6 @@
 {
   "name": "ISWS2022-Inrupt-Demonstrator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A demostrator of using Inrupt Solid API - part of the ISWS 2022 Summer School demonstrator code set",
   "main": "index.js",
   "scripts": {
@@ -11,16 +11,17 @@
   "author": "Michelle Bachler",
   "license": "MIT",
   "dependencies": {
-    "@inrupt/solid-client": "^1.23.0",
-    "@inrupt/solid-client-authn-browser": "^1.11.8",
-    "@inrupt/vocab-common-rdf": "^1.0.3",
+    "@inrupt/solid-client": "^1.23.3",
+    "@inrupt/solid-client-authn-browser": "^1.12.2",
+    "@inrupt/vocab-common-rdf": "^1.0.5",
+    "@inrupt/vocab-solid": "^1.0.4",
     "buffer": "^6.0.3"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
     "style-loader": "^3.3.1",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   }
 }
