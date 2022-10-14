@@ -1,6 +1,8 @@
 # isws2022-inrupt
  
-This is a small library that has functions for the demonstrator to login a person into their Solid pod and read and write files/content from the demonstrator to their pod through [https://broker.pod.inrupt.com](https://broker.pod.inrupt.com).
+This is a small library that has functions for the demonstrator to login a person into their Solid pod and read and write files/content from the demonstrator to their pod through [https://broker.pod.inrupt.com](https://broker.pod.inrupt.com). 
+
+(UPDATE: broker.pod.inrupt.com stopped working with a CORS error - noticed on 12th Oct 2022. This library has now been changed to have the oidc issuer info passed down into the login function, rather than have it be hardcoded in the code base as it was for the ISWS 2022 demo. This makes it more generically useful for us and we are using it in other demos we are playing with, with a different webid/pod provider.)
  
 It is based on the Inrupt tutorials on how to login to a Solid pod, [https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/), and how to read/write files to a pod, [https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/read-write-files/](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/read-write-files/).
 
