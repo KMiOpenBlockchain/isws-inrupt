@@ -109,6 +109,14 @@ async function finishSolidLogin() {
 	}
 }
 
+/**
+ * Return the current session object.
+ */
+export function getSession() {
+	return session;
+}
+
+
 // The example has the login redirect back to the index.html.
 // finishLogin() calls the function to process login information.
 // If the function is called when not part of the login redirect, the function is a no-op.
