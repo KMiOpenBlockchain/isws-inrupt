@@ -71,12 +71,22 @@ let session = null;
 /**
  * Start Login Process. Call login() function.
  */
-export function startSolidLogin(oidcIssuerUrl, clientNameString) {
-	return login({
-		oidcIssuer: oidcIssuerUrl,
-		redirectUrl: window.location.href,
-		clientName: clientNameString
-	});
+export function startSolidLogin(oidcIssuerUrl, clientNameString, redirectURL, handler) {
+
+	if (typeof handler === 'function') {
+		return login({
+			oidcIssuer: oidcIssuerUrl,
+			redirectUrl: redirectURL,
+			clientName: clientNameString,
+			handleRedirect: handler
+		});
+	} else {
+		return login({
+			oidcIssuer: oidcIssuerUrl,
+			redirectUrl: redirectURL,
+			clientName: clientNameString
+		});
+	}
 }
 
 /**
