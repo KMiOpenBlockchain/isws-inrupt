@@ -25,7 +25,7 @@ This will result in a new inruptlib.js file being created in a 'dist' folder.
 
 ## Main Library methods used by ISWS 2022/2023 Demonstrators 
 
-The login function currnently takes four paramenters, the fourth being an optional handler function it will call, before returning to the redirect page.
+The login function currently takes four paramenters, the fourth being an optional handler function it will call, before returning to the redirect page.
 
 ```
 function startSolidLogin(oidcIssuerUrl, clientNameString, redirectURL, handler) 
