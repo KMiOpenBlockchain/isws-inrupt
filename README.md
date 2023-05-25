@@ -25,7 +25,7 @@ This will result in a new inruptlib.js file being created in a 'dist' folder.
 
 ## Main Library methods used by ISWS 2022/2023 Demonstrators 
 
-The login function currnetly takes four paramenters, the fourth being optional redirect handler code.
+The login function currnently takes four paramenters, the fourth being an optional handler function it will call, before returning to the redirect page.
 
 ```
 function startSolidLogin(oidcIssuerUrl, clientNameString, redirectURL, handler) 
@@ -36,7 +36,7 @@ Exmaple Use:
 Inrupt.startSolidLogin(oidcIssuerUrl, "ISWS Summer School Demo - 2023", window.location.href);
 ```
 
-This function will call back to the page it is called from (the passed redirectURL) and be picked up by the function 'finishSolidLogin()', which it expects to find on the redirect page.
+This function will call back to the passed redirectURL, usually the page it is called from, and be picked up by the function 'finishSolidLogin()', which it expects to find on the redirect page.
 
 ***
 ```
