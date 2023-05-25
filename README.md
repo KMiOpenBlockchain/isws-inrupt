@@ -58,7 +58,7 @@ reader.onload = function() {
 ```
 writeFileToPod(file, targetFileURL)
 ```
-Code snippet exmaple:
+Code snippet example:
 
 From File
 ```
@@ -92,7 +92,7 @@ const fileurl = await Inrupt.writeFileToPod(file, pathToStore);
 ```
 loadFolderContentList(podFolderURL)
 ```
-Code snippet from ISWS 2022 Demonstrator:
+Code snippet example:
 ```
 try {
   const podUrl = document.getElementById("PodURL").value;
