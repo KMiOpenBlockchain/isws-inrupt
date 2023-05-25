@@ -1,4 +1,4 @@
-# isws2022-inrupt
+# isws-inrupt
  
 This is a small library that has functions for the demonstrator to login a person into their Solid pod and read and write files/content from the demonstrator to their pod through [https://broker.pod.inrupt.com](https://broker.pod.inrupt.com). 
 
