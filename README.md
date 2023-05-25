@@ -51,7 +51,7 @@ reader.onload = function() {
 ```
 writeFileToPod(file, targetFileURL)
 ```
-Code snippet from ISWS 2022 Demonstrator:
+Code snippet from ISWS Demonstrators:
 
 From File
 ```
