@@ -23,7 +23,7 @@ This will result in a new inruptlib.js file being created in a 'dist' folder.
 
 * Copy the distribution libaray file (dist/inruptlib.js) into your web app code base. There will be an 'Inrupt' object exported that you can then reference in your main webpage javascript code to call the methods of this libaray
 
-## Main Library methodsused by ISWS 2022/2023 Demonstrators 
+## Main Library methods used by ISWS 2022/2023 Demonstrators 
 
 The login function currnetly takes four paramenters, the fourth being optional redirect handler code.
 
