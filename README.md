@@ -23,19 +23,26 @@ This will result in a new inruptlib.js file being created in a 'dist' folder.
 
 * Copy the distribution libaray file (dist/inruptlib.js) into your web app code base. There will be an 'Inrupt' object exported that you can then reference in your main webpage javascript code to call the methods of this libaray
 
-## Main Library methods used by ISWS 2022 Demonstrator 
+## Main Library methodsused by ISWS 2022/2023 Demonstrators 
 
-Login to Solid
+The login function currnetly takes four paramenters, the fourth being optional redirect handler code.
+
 ```
-Inrupt.startSolidLogin(oidcIssuerUrl, clientNameString)
+function startSolidLogin(oidcIssuerUrl, clientNameString, redirectURL, handler) 
 ```
-This function will call back to the page it is called from and be picked up by 'finishSolidLogin()'
+
+Exmaple Use:
+```
+Inrupt.startSolidLogin(oidcIssuerUrl, "ISWS Summer School Demo - 2023", window.location.href);
+```
+
+This function will call back to the page it is called from (the passed redirectURL) and be picked up by the function 'finishSolidLogin()', which it expects to find on the redirect page.
 
 ***
 ```
 Inrupt.readFileFromPod(fileURL)
 ```
-Code snippet from ISWS 2022 Demonstrator:
+Code snippet example:
 ```
 const fileURL = document.getElementById("validateRDFInputURL").value;
 const file = await Inrupt.readFileFromPod(fileURL);
@@ -51,7 +58,7 @@ reader.onload = function() {
 ```
 writeFileToPod(file, targetFileURL)
 ```
-Code snippet from ISWS Demonstrators:
+Code snippet exmaple:
 
 From File
 ```
