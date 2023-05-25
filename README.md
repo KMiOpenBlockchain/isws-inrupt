@@ -31,7 +31,7 @@ The login function currnently takes four paramenters, the fourth being an option
 function startSolidLogin(oidcIssuerUrl, clientNameString, redirectURL, handler) 
 ```
 
-Exmaple Use:
+Example Use:
 ```
 Inrupt.startSolidLogin(oidcIssuerUrl, "ISWS Summer School Demo - 2023", window.location.href);
 ```
