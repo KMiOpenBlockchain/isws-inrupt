@@ -6,7 +6,7 @@ This is a small library that has functions for the demonstrator to login a perso
  
 It is based on the Inrupt tutorials on how to login to a Solid pod, [https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/), and how to read/write files to a pod, [https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/read-write-files/](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/read-write-files/).
 
-A compiled copy of this library is included in the isws2022-deomstator code base, but if you wish to modify this code and build your own copy please:
+To modify this code and build your own libary file instance please:
 
 * Download the course code into a local folder.
 * Install the node modules for the package:
